@@ -7,8 +7,3 @@ runs:
       with:
         repository: 'mtararujs/python-greetings'
         path: 'app'
-    - run: echo Installing dependencies
-      shell: cmd
-    - working-directory: 'app'
-      shell: cmd
-      run: pip install -r requirements.txt

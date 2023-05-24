@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3.5.2
       - uses: ./.github/actions/clone
+      - run: echo Installing dependencies
+        shell: cmd
+      - working-directory: 'app'
+        shell: cmd
+        run: pip install -r requirements.txt
   deploy-to-dev:
     runs-on: self-hosted
     needs: install-pip-deps
