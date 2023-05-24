@@ -7,10 +7,4 @@ jobs:
   install-pip-deps:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v3.5.2
-      - run: echo Cloning app
-      - uses: actions/checkout@v3.5.2
-        with:
-          repository: 'mtararujs/python-greetings'
-          path: 'app'
       - uses: ./.github/actions/clone
