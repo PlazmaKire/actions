@@ -13,4 +13,4 @@ jobs:
         with:
           repository: 'mtararujs/python-greetings'
           path: 'app'
-      - uses: actions/clone
+      - uses: ./.github/actions/clone
