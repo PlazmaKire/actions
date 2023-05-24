@@ -1,0 +1,18 @@
+inputs:
+  vides-nosaukums:
+    description: 'vides-nosaukums'
+runs:
+  using: "composite"
+  steps: 
+    - shell: cmd
+      run: echo Cloning tests
+    - uses: actions/checkout@v3.5.2
+      with:
+        repository: 'mtararujs/course-js-api-framework'
+        path: 'test'
+    - working-directory: 'test'
+      shell: cmd
+      run:
+        echo Installing dependencied and running tests
+        npm install
+        npm run greetings greetings_${{ inputs.vides-nosaukums }}

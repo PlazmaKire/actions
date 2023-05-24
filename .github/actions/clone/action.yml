@@ -2,8 +2,8 @@ runs:
   using: "composite"
   steps: 
     - uses: actions/checkout@v3.5.2
-    - run: echo Cloning app
-      shell: cmd
+    - shell: cmd
+      run: echo Cloning app
     - uses: actions/checkout@v3.5.2
       with:
         repository: 'mtararujs/python-greetings'

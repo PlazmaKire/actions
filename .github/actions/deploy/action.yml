@@ -1,0 +1,15 @@
+inputs:
+  vides-nosaukums:
+    description: 'vides-nosaukums'
+  porta-numurs:
+    description: 'porta-numurs'
+runs:
+  using: "composite"
+  steps: 
+    - uses: ./.github/actions/clone
+    - working-directory: 'app'
+      shell: cmd
+      run:
+        echo Deploying app
+        pm2 delete greetings-app-${{ inputs.vides_nosaukums }} & EXIT /B 0
+        pm2 start app.py --name greetings-app-${{ inputs.vides-nosaukums }} -- --port ${{ inputs.porta_numurs }}
