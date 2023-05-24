@@ -1,4 +1,4 @@
-name: konveijers
+name: python-greetings
 
 on:
   workflow_dispatch:
@@ -12,3 +12,5 @@ jobs:
         with:
           repository: 'mtararujs/python-greetings'
           path: 'app'
+      - working-directory: 'app'
+        run: pip install -r requirements.txt
