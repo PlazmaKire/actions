@@ -2,6 +2,7 @@ runs:
   using: "composite"
   steps: 
     - working-directory: 'app'
+      shell: cmd
       run:
         echo Installing dependencies
         pip install -r requirements.txt
