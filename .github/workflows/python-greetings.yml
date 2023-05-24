@@ -7,11 +7,4 @@ jobs:
   install-pip-deps:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v3.5.2
-      - uses:  actions/checkout@v3.5.2
-        with:
-          repository: 'mtararujs/python-greetings'
-          path: 'app'
-      - working-directory: 'app'
-        shell: cmd
-        run: pip install -r requirements.txt
+      - uses: actions/clone
