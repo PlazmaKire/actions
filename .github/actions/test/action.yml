@@ -10,9 +10,11 @@ runs:
       with:
         repository: 'mtararujs/course-js-api-framework'
         path: 'test'
+    - shell: cmd
+      run: echo Installing dependencied and running tests
     - working-directory: 'test'
       shell: cmd
-      run:
-        echo Installing dependencied and running tests
-        npm install
-        npm run greetings greetings_${{ inputs.vides-nosaukums }}
+      run: npm install
+    - working-directory: 'test'
+      shell: cmd
+      run: npm run greetings greetings_${{ inputs.vides-nosaukums }}
